@@ -58,4 +58,10 @@ insert into KOMENTARISANJE_SMESTAJA (TURISTA_KORISNIK_idKORISNIK, SMESTAJ_idSMES
 values  (1000, 1000000, 'Super je sve.', '2018-03-03');
 
 insert into REZERVISE_ARANZMAN (TURISTA_KORISNIK_idKORISNIK, ARANZMAN_idAranzman)
+values  (1000, 10000);
+
+insert into REZERVISE_SMESTAJ (TURISTA_KORISNIK_idKORISNIK, SMESTAJ_idSMESTAJ)
 values  (1000, 1000000);
+
+insert into KOMUNICIRA (TURISTA_KORISNIK_idKORISNIK, TURISTA_KORISNIK_idKORISNIK1, poruke)
+values  (1000, 1001, 'message1: Koja je sledeca destinacija / message2: Idemo u Rim! ');
