@@ -64,4 +64,4 @@ insert into REZERVISE_SMESTAJ (TURISTA_KORISNIK_idKORISNIK, SMESTAJ_idSMESTAJ)
 values  (1000, 1000000);
 
 insert into KOMUNICIRA (TURISTA_KORISNIK_idKORISNIK, TURISTA_KORISNIK_idKORISNIK1, poruke)
-values  (1000, 1001, 'message1: Koja je sledeca destinacija / message2: Idemo u Rim! ');
+values  (1000, 1001, 'message1: Koja je sledeca destinacija?');
