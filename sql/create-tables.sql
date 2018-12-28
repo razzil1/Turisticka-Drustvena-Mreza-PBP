@@ -100,7 +100,7 @@ DROP TABLE IF EXISTS `mydb`.`ARANZMAN` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`ARANZMAN` (
   `idAranzman` INT NOT NULL,
-  `cena` VARCHAR(45) NOT NULL,
+  `cena` INT NOT NULL,
   `vremePocetka` DATE NOT NULL,
   `vremeZavrsetka` DATE NOT NULL,
   `brojSlobodnihMesta` INT NOT NULL,

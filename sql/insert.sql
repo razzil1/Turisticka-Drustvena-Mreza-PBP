@@ -17,7 +17,7 @@ insert into VLASNIK_SMESTAJA (ime, prezime, PIB_saradnika, telefon, adresa, KORI
 values  ('Srdjan', 'Lazarevic', '101', '+361643333333', 'Arandjelovac', 1003);
 
 insert into ARANZMAN (idAranzman, cena, vremePocetka, vremeZavrsetka, brojSlobodnihMesta, brojSvidjanja, AGENCIJA_PIB, AGENCIJA_KORISNIK_idKORISNIK)
-values  (10000, '1000', '2018-12-30', '2019-01-03', 30, 0, '100', 1002);
+values  (10000, 1000, '2018-12-30', '2019-01-03', 30, 0, '100', 1002);
 
 insert into DESTINACIJA (idDESTINACIJA, drzava, grad)
 values  (100000, 'Francuska', 'Pariz');
