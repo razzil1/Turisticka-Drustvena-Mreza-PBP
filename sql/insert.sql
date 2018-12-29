@@ -4,10 +4,12 @@ insert into KORISNIK (idKORISNIK, korisnickoIme, email, sifra)
 values  (1000, 'razzil1', 'razzil1@yahoo.com', 'test'),
         (1001, 'mare995', 'marko@spartans.tect', 'test'),
         (1002, 'jungleTribe', 'jungletravel@gmail.com', 'test'),
-        (1003, 'prodavacSmestaja', 'prodaja@smestaj.com', 'test');
+        (1003, 'prodavacSmestaja', 'prodaja@smestaj.com', 'test'),
+        (1004, 'filipTravel', 'filip@travel.com', 'test');
 
 insert into AGENCIJA (PIB, naziv, adresa, telefon, KORISNIK_idKORISNIK)
-values  ('100', 'Junge Tribe', 'Gospodar Jevremova', '+381641111111', 1002);
+values  ('100', 'Junge Tribe', 'Gospodar Jevremova', '+381641111111', 1002),
+        ('101', 'Filip Travel', 'Gospodar Jovanova', '+381649921312', 1004);
 
 insert into TURISTA (ime, prezime, telefon, adresa, KORISNIK_idKORISNIK)
 values  ('Dusan', 'Pilipovic', '+381649953314', 'Uzdinska 11f', 1000),
@@ -17,10 +19,12 @@ insert into VLASNIK_SMESTAJA (ime, prezime, PIB_saradnika, telefon, adresa, KORI
 values  ('Srdjan', 'Lazarevic', '101', '+361643333333', 'Arandjelovac', 1003);
 
 insert into ARANZMAN (idAranzman, cena, vremePocetka, vremeZavrsetka, brojSlobodnihMesta, brojSvidjanja, AGENCIJA_PIB, AGENCIJA_KORISNIK_idKORISNIK)
-values  (10000, 1000, '2018-12-30', '2019-01-03', 30, 0, '100', 1002);
+values  (10000, 1000, '2018-12-30', '2019-01-03', 30, 0, '100', 1002),
+        (10001, 150, '2018-12-30', '2019-01-03', 30, 0, '100', 1002);
 
 insert into DESTINACIJA (idDESTINACIJA, drzava, grad)
-values  (100000, 'Francuska', 'Pariz');
+values  (100000, 'Francuska', 'Pariz'),
+        (100001, 'Srbija', 'Beograd');
 
 insert into SADRZI (ARANZMAN_idAranzman, DESTINACIJA_idDESTINACIJA)
 values  (10000, 100000);
