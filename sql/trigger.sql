@@ -61,3 +61,12 @@ begin
     SIGNAL SQLSTATE '45000' SET message_text = 'Greska: smestaj je vec rezervisan';
   end if;
 end|
+
+drop trigger if exists bi_ARANZMAN|
+create trigger bi_ARANZMAN before insert on ARANZMAN
+for each row
+begin
+  if(new.vremePocetka > new.vremeZavrsetka) then
+    SIGNAL SQLSTATE '45000' SET message_text = 'Greska: datum zavrsetka mora biti veci od datuma pocetka';
+	end if;
+end|

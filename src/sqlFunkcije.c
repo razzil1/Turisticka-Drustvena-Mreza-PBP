@@ -526,9 +526,289 @@ void ispisiObjave(Sql *sql)
   printf ("\n\n");
 }
 
+void ispisiSvidjanjaObjava(Sql *sql)
+{
+	sprintf(sql->query, "select * from SVIDJANJE_OBJAVE");
+
+  if(mysql_query(sql->connection, sql->query)) {
+    printf("Neuspesno izvrsavanje upita\n");
+    exit(EXIT_FAILURE);
+  }
+
+  sql->result = mysql_use_result(sql->connection);
+
+  sql->column = mysql_fetch_fields(sql->result);
+
+  int n = mysql_field_count(sql->connection);
+
+  for (int i=0;i<n;i++) {
+    printf ("%s\t\t", sql->column[i].name);
+  }
+  printf ("\n\n");
+
+  while ((sql->row = mysql_fetch_row(sql->result))) {
+    for (int i=0;i<n;i++)
+      printf ("%s\t\t", sql->row[i]);
+    printf ("\n");
+  }
+  printf ("\n\n");
+}
+
 void ispisiKomentareObjava(Sql *sql)
 {
 	sprintf(sql->query, "select * from KOMENTARISE_OBJAVU");
+
+  if(mysql_query(sql->connection, sql->query)) {
+    printf("Neuspesno izvrsavanje upita\n");
+    exit(EXIT_FAILURE);
+  }
+
+  sql->result = mysql_use_result(sql->connection);
+
+  sql->column = mysql_fetch_fields(sql->result);
+
+  int n = mysql_field_count(sql->connection);
+
+  for (int i=0;i<n;i++) {
+    printf ("%s\t\t", sql->column[i].name);
+  }
+  printf ("\n\n");
+
+  while ((sql->row = mysql_fetch_row(sql->result))) {
+    for (int i=0;i<n;i++)
+      printf ("%s\t\t", sql->row[i]);
+    printf ("\n");
+  }
+  printf ("\n\n");
+}
+
+void ispisiSvidjanjaSmestaja(Sql *sql)
+{
+	sprintf(sql->query, "select * from SVIDJANJE_SMESTAJA");
+
+  if(mysql_query(sql->connection, sql->query)) {
+    printf("Neuspesno izvrsavanje upita\n");
+    exit(EXIT_FAILURE);
+  }
+
+  sql->result = mysql_use_result(sql->connection);
+
+  sql->column = mysql_fetch_fields(sql->result);
+
+  int n = mysql_field_count(sql->connection);
+
+  for (int i=0;i<n;i++) {
+    printf ("%s\t\t", sql->column[i].name);
+  }
+  printf ("\n\n");
+
+  while ((sql->row = mysql_fetch_row(sql->result))) {
+    for (int i=0;i<n;i++)
+      printf ("%s\t\t", sql->row[i]);
+    printf ("\n");
+  }
+  printf ("\n\n");
+}
+
+void ispisiKomentareSmestaja(Sql *sql)
+{
+	sprintf(sql->query, "select * from KOMENTARISANJE_SMESTAJA");
+
+  if(mysql_query(sql->connection, sql->query)) {
+    printf("Neuspesno izvrsavanje upita\n");
+    exit(EXIT_FAILURE);
+  }
+
+  sql->result = mysql_use_result(sql->connection);
+
+  sql->column = mysql_fetch_fields(sql->result);
+
+  int n = mysql_field_count(sql->connection);
+
+  for (int i=0;i<n;i++) {
+    printf ("%s\t\t", sql->column[i].name);
+  }
+  printf ("\n\n");
+
+  while ((sql->row = mysql_fetch_row(sql->result))) {
+    for (int i=0;i<n;i++)
+      printf ("%s\t\t", sql->row[i]);
+    printf ("\n");
+  }
+  printf ("\n\n");
+}
+
+void ispisiSvidjanjaAranzmana(Sql *sql)
+{
+	sprintf(sql->query, "select * from SVIDJANJE_ARANZMANA");
+
+  if(mysql_query(sql->connection, sql->query)) {
+    printf("Neuspesno izvrsavanje upita\n");
+    exit(EXIT_FAILURE);
+  }
+
+  sql->result = mysql_use_result(sql->connection);
+
+  sql->column = mysql_fetch_fields(sql->result);
+
+  int n = mysql_field_count(sql->connection);
+
+  for (int i=0;i<n;i++) {
+    printf ("%s\t\t", sql->column[i].name);
+  }
+  printf ("\n\n");
+
+  while ((sql->row = mysql_fetch_row(sql->result))) {
+    for (int i=0;i<n;i++)
+      printf ("%s\t\t", sql->row[i]);
+    printf ("\n");
+  }
+  printf ("\n\n");
+}
+
+void ispisiKomentareAranzmana(Sql *sql)
+{
+	sprintf(sql->query, "select * from KOMENTARISE_ARANZMAN");
+
+  if(mysql_query(sql->connection, sql->query)) {
+    printf("Neuspesno izvrsavanje upita\n");
+    exit(EXIT_FAILURE);
+  }
+
+  sql->result = mysql_use_result(sql->connection);
+
+  sql->column = mysql_fetch_fields(sql->result);
+
+  int n = mysql_field_count(sql->connection);
+
+  for (int i=0;i<n;i++) {
+    printf ("%s\t\t", sql->column[i].name);
+  }
+  printf ("\n\n");
+
+  while ((sql->row = mysql_fetch_row(sql->result))) {
+    for (int i=0;i<n;i++)
+      printf ("%s\t\t", sql->row[i]);
+    printf ("\n");
+  }
+  printf ("\n\n");
+}
+
+void ispisiOceneVlasnika(Sql *sql)
+{
+	sprintf(sql->query, "select * from OCENJUJE_VLASNIKA");
+
+  if(mysql_query(sql->connection, sql->query)) {
+    printf("Neuspesno izvrsavanje upita\n");
+    exit(EXIT_FAILURE);
+  }
+
+  sql->result = mysql_use_result(sql->connection);
+
+  sql->column = mysql_fetch_fields(sql->result);
+
+  int n = mysql_field_count(sql->connection);
+
+  for (int i=0;i<n;i++) {
+    printf ("%s\t\t", sql->column[i].name);
+  }
+  printf ("\n\n");
+
+  while ((sql->row = mysql_fetch_row(sql->result))) {
+    for (int i=0;i<n;i++)
+      printf ("%s\t\t", sql->row[i]);
+    printf ("\n");
+  }
+  printf ("\n\n");
+}
+
+void ispisiOceneAgencija(Sql *sql)
+{
+	sprintf(sql->query, "select * from OCENJUJE_AGENCIJU");
+
+  if(mysql_query(sql->connection, sql->query)) {
+    printf("Neuspesno izvrsavanje upita\n");
+    exit(EXIT_FAILURE);
+  }
+
+  sql->result = mysql_use_result(sql->connection);
+
+  sql->column = mysql_fetch_fields(sql->result);
+
+  int n = mysql_field_count(sql->connection);
+
+  for (int i=0;i<n;i++) {
+    printf ("%s\t\t", sql->column[i].name);
+  }
+  printf ("\n\n");
+
+  while ((sql->row = mysql_fetch_row(sql->result))) {
+    for (int i=0;i<n;i++)
+      printf ("%s\t\t", sql->row[i]);
+    printf ("\n");
+  }
+  printf ("\n\n");
+}
+
+void ispisiRezervisanjeSmestaja(Sql *sql)
+{
+	sprintf(sql->query, "select * from REZERVISE_SMESTAJ");
+
+  if(mysql_query(sql->connection, sql->query)) {
+    printf("Neuspesno izvrsavanje upita\n");
+    exit(EXIT_FAILURE);
+  }
+
+  sql->result = mysql_use_result(sql->connection);
+
+  sql->column = mysql_fetch_fields(sql->result);
+
+  int n = mysql_field_count(sql->connection);
+
+  for (int i=0;i<n;i++) {
+    printf ("%s\t\t", sql->column[i].name);
+  }
+  printf ("\n\n");
+
+  while ((sql->row = mysql_fetch_row(sql->result))) {
+    for (int i=0;i<n;i++)
+      printf ("%s\t\t", sql->row[i]);
+    printf ("\n");
+  }
+  printf ("\n\n");
+}
+
+void ispisiRezervisanjeAranzmana(Sql *sql)
+{
+	sprintf(sql->query, "select * from REZERVISE_ARANZMAN");
+
+  if(mysql_query(sql->connection, sql->query)) {
+    printf("Neuspesno izvrsavanje upita\n");
+    exit(EXIT_FAILURE);
+  }
+
+  sql->result = mysql_use_result(sql->connection);
+
+  sql->column = mysql_fetch_fields(sql->result);
+
+  int n = mysql_field_count(sql->connection);
+
+  for (int i=0;i<n;i++) {
+    printf ("%s\t\t", sql->column[i].name);
+  }
+  printf ("\n\n");
+
+  while ((sql->row = mysql_fetch_row(sql->result))) {
+    for (int i=0;i<n;i++)
+      printf ("%s\t\t", sql->row[i]);
+    printf ("\n");
+  }
+  printf ("\n\n");
+}
+
+void ispisiKomuniciranje(Sql *sql)
+{
+	sprintf(sql->query, "select * from KOMUNICIRA");
 
   if(mysql_query(sql->connection, sql->query)) {
     printf("Neuspesno izvrsavanje upita\n");
@@ -576,10 +856,55 @@ void obrisiKorisnika(Sql *sql)
   printf("\n\n");
 }
 
+void obrisiAranzman(Sql *sql)
+{
+  printf("Tabela Aranzman pre brisanja:\n\n");
+  ispisiAranzmane(sql);
+
+  printf("Unesite id aranzmana koji zelite da izbrisete iz baze:\n");
+
+  int id;
+  scanf("%i", &id);
+
+  sprintf (sql->query, "delete from ARANZMAN where idARANZMAN=%i;", id);
+
+  if (mysql_query(sql->connection, sql->query)) {
+    printf ("Neuspesno izvrsavanje upita\n");
+    exit (EXIT_FAILURE);
+  }
+
+  printf ("Tabela Aranzman nakon brisanja:\n\n");
+  ispisiAranzmane(sql);
+  printf("\n\n");
+}
+
+void obrisiSmestaj(Sql *sql)
+{
+  printf("Tabela Smestaj pre brisanja:\n\n");
+  ispisiSmestaje(sql);
+
+  printf("Unesite id smestaja koji zelite da izbrisete iz baze:\n");
+
+  int id;
+  scanf("%i", &id);
+
+  sprintf (sql->query, "delete from SMESTAJ where idSMESTAJ=%i;", id);
+
+  if (mysql_query(sql->connection, sql->query)) {
+    printf ("Neuspesno izvrsavanje upita\n");
+    exit (EXIT_FAILURE);
+  }
+
+  printf ("Tabela Smestaj nakon brisanja:\n\n");
+  ispisiSmestaje(sql);
+  printf("\n\n");
+}
+
 void svidjanjeObjave(Sql *sql)
 {
   ispisiTuriste(sql);
   ispisiObjave(sql);
+  ispisiSvidjanjaObjava(sql);
 
   printf("Unesite: \nid objave, \nid turiste\n\n");
   int idObjave;
@@ -594,6 +919,48 @@ void svidjanjeObjave(Sql *sql)
   }
 
   ispisiObjave(sql);
+}
+
+void svidjanjeSmestaja(Sql *sql)
+{
+  ispisiTuriste(sql);
+  ispisiSmestaje(sql);
+  ispisiSvidjanjaSmestaja(sql);
+
+  printf("Unesite: \nid turiste, \nid smestaja\n\n");
+  int idTuriste;
+  int idSmestaja;
+	scanf("%d%d", &idTuriste, &idSmestaja);
+
+	sprintf(sql->query,"insert into SVIDJANJE_SMESTAJA (TURISTA_KORISNIK_idKORISNIK, SMESTAJ_idSMESTAJ) values (%d, %d);", idTuriste, idSmestaja);
+	printf("Upit koji se izvrsava '%s'\n", sql->query);
+	if (mysql_query(sql->connection, sql->query)) {
+    printf ("Neuspesno izvrsavanje upita svidjanjeSmestaja\n");
+    exit (EXIT_FAILURE);
+  }
+
+  ispisiSmestaje(sql);
+}
+
+void svidjanjeAranzmana(Sql *sql)
+{
+  ispisiTuriste(sql);
+  ispisiAranzmane(sql);
+  ispisiSvidjanjaAranzmana(sql);
+
+  printf("Unesite: \nid aranzmana, \nid turiste\n\n");
+  int idAranzmana;
+  int idTuriste;
+	scanf("%d%d", &idAranzmana, &idTuriste);
+
+	sprintf(sql->query,"insert into SVIDJANJE_ARANZMANA (ARANZMAN_idAranzman, TURISTA_KORISNIK_idKORISNIK) values (%d, %d);", idAranzmana, idTuriste);
+	printf("Upit koji se izvrsava '%s'\n", sql->query);
+	if (mysql_query(sql->connection, sql->query)) {
+    printf ("Neuspesno izvrsavanje upita svidjanjeAranzmana\n");
+    exit (EXIT_FAILURE);
+  }
+
+  ispisiAranzmane(sql);
 }
 
 void komentarisanjeObjave(Sql *sql)
@@ -617,4 +984,177 @@ void komentarisanjeObjave(Sql *sql)
   }
 
   ispisiKomentareObjava(sql);
+
+  free(sadrzaj);
+  free(vremeKreiranja);
+}
+
+void komentarisanjeSmestaja(Sql *sql)
+{
+  ispisiTuriste(sql);
+  ispisiSmestaje(sql);
+  ispisiKomentareSmestaja(sql);
+
+  printf("Unesite: \nid turiste, \nid smestaja, \nsadrzaj, \nvreme kreiranja\n\n");
+  int idTuriste;
+  int idSmestaja;
+  char* sadrzaj;
+  char* vremeKreiranja;
+	scanf("%d%d%ms%ms", &idTuriste, &idSmestaja, &sadrzaj, &vremeKreiranja);
+
+	sprintf(sql->query,"insert into KOMENTARISANJE_SMESTAJA (TURISTA_KORISNIK_idKORISNIK, SMESTAJ_idSMESTAJ, sadrzaj, vremeKreiranja) values (%d, %d, '%s', '%s');", idTuriste, idSmestaja, sadrzaj, vremeKreiranja);
+	printf("Upit koji se izvrsava '%s'\n", sql->query);
+	if (mysql_query(sql->connection, sql->query)) {
+    printf ("Neuspesno izvrsavanje upita komentarisanjeSmestaja\n");
+    exit (EXIT_FAILURE);
+  }
+
+  ispisiKomentareSmestaja(sql);
+
+  free(sadrzaj);
+  free(vremeKreiranja);
+}
+
+void komentarisanjeAranzmana(Sql *sql)
+{
+  ispisiTuriste(sql);
+  ispisiAranzmane(sql);
+  ispisiKomentareAranzmana(sql);
+
+  printf("Unesite: \nid turiste, \nid aranzmana, \nsadrzaj, \nvreme kreiranja\n\n");
+  int idTuriste;
+  int idAranzmana;
+  char* sadrzaj;
+  char* vremeKreiranja;
+	scanf("%d%d%ms%ms", &idTuriste, &idAranzmana, &sadrzaj, &vremeKreiranja);
+
+	sprintf(sql->query,"insert into KOMENTARISE_ARANZMAN (TURISTA_KORISNIK_idKORISNIK, ARANZMAN_idAranzman, sadrzaj, vremeKreiranja) values (%d, %d, '%s', '%s');", idTuriste, idAranzmana, sadrzaj, vremeKreiranja);
+	printf("Upit koji se izvrsava '%s'\n", sql->query);
+	if (mysql_query(sql->connection, sql->query)) {
+    printf ("Neuspesno izvrsavanje upita komentarisanjeAranzmana\n");
+    exit (EXIT_FAILURE);
+  }
+
+  ispisiKomentareAranzmana(sql);
+
+  free(sadrzaj);
+  free(vremeKreiranja);
+}
+
+void ocenjivanjeVlasnika(Sql *sql)
+{
+
+  ispisiTuriste(sql);
+  ispisiVlasnikeSmestaja(sql);
+  ispisiOceneVlasnika(sql);
+
+  printf("Unesite: \nid turiste, \nid vlasnika smestaja, \nocenu\n\n");
+  int idTuriste;
+  int idVlasnika;
+  int ocena;
+	scanf("%d%d%d", &idTuriste, &idVlasnika, &ocena);
+
+	sprintf(sql->query,"insert into OCENJUJE_VLASNIKA (TURISTA_KORISNIK_idKORISNIK, VLASNIK_SMESTAJA_KORISNIK_idKORISNIK, ocena) values (%d, %d, %d);", idTuriste, idVlasnika, ocena);
+	printf("Upit koji se izvrsava '%s'\n", sql->query);
+	if (mysql_query(sql->connection, sql->query)) {
+    printf ("Neuspesno izvrsavanje upita ocenjivanjeVlasnika\n");
+    exit (EXIT_FAILURE);
+  }
+
+  ispisiOceneVlasnika(sql);
+}
+
+void ocenjivanjeAgencije(Sql *sql)
+{
+
+  ispisiTuriste(sql);
+  ispisiAgencije(sql);
+  ispisiOceneAgencija(sql);
+
+  printf("Unesite: \nid turiste, \nPIB agencije, \nid agencije, \nocenu\n\n");
+  int idTuriste;
+  char* PIB_agencije;
+  int idAgencije;
+  int ocena;
+	scanf("%d%ms%d%d", &idTuriste, &PIB_agencije, &idAgencije, &ocena);
+
+	sprintf(sql->query,"insert into OCENJUJE_AGENCIJU (TURISTA_KORISNIK_idKORISNIK, AGENCIJA_PIB, AGENCIJA_KORISNIK_idKORISNIK, ocena) values (%d, '%s', %d, %d);", idTuriste, PIB_agencije, idAgencije, ocena);
+	printf("Upit koji se izvrsava '%s'\n", sql->query);
+	if (mysql_query(sql->connection, sql->query)) {
+    printf ("Neuspesno izvrsavanje upita ocenjivanjeAgencije\n");
+    exit (EXIT_FAILURE);
+  }
+
+  ispisiOceneAgencija(sql);
+
+  free(PIB_agencije);
+}
+
+void rezervisanjeSmestaja(Sql *sql)
+{
+
+  ispisiTuriste(sql);
+  ispisiSmestaje(sql);
+  ispisiRezervisanjeSmestaja(sql);
+
+  printf("Unesite: \nid turiste, \nid smestaja\n\n");
+  int idTuriste;
+  int idSmestaja;
+	scanf("%d%d", &idTuriste, &idSmestaja);
+
+	sprintf(sql->query,"insert into REZERVISE_SMESTAJ (TURISTA_KORISNIK_idKORISNIK, SMESTAJ_idSMESTAJ) values (%d, %d);", idTuriste, idSmestaja);
+	printf("Upit koji se izvrsava '%s'\n", sql->query);
+	if (mysql_query(sql->connection, sql->query)) {
+    printf ("Neuspesno izvrsavanje upita rezervisanjeSmestaja\n");
+    exit (EXIT_FAILURE);
+  }
+
+  ispisiRezervisanjeSmestaja(sql);
+}
+
+void rezervisanjeAranzmana(Sql *sql)
+{
+
+  ispisiTuriste(sql);
+  ispisiAranzmane(sql);
+  ispisiRezervisanjeAranzmana(sql);
+
+  printf("Unesite: \nid turiste, \nid aranzmana\n\n");
+  int idTuriste;
+  int idAranzmana;
+	scanf("%d%d", &idTuriste, &idAranzmana);
+
+	sprintf(sql->query,"insert into REZERVISE_ARANZMAN (TURISTA_KORISNIK_idKORISNIK, ARANZMAN_idARANZMAN) values (%d, %d);", idTuriste, idAranzmana);
+	printf("Upit koji se izvrsava '%s'\n", sql->query);
+	if (mysql_query(sql->connection, sql->query)) {
+    printf ("Neuspesno izvrsavanje upita rezervisanjeAranzmana\n");
+    exit (EXIT_FAILURE);
+  }
+
+  ispisiRezervisanjeAranzmana(sql);
+  ispisiAranzmane(sql);
+}
+
+void komuniciranje(Sql *sql)
+{
+
+  ispisiTuriste(sql);
+  ispisiKomuniciranje(sql);
+
+  printf("Unesite: \nid prvog turiste, \nid drugog turiste, \nporuku\n\n");
+  int idTuriste1;
+  int idTuriste2;
+  char* poruka;
+	scanf("%d%d%ms", &idTuriste1, &idTuriste2, &poruka);
+
+	sprintf(sql->query,"insert into KOMUNICIRA (TURISTA_KORISNIK_idKORISNIK, TURISTA_KORISNIK_idKORISNIK1, poruke) values (%d, %d, '%s');", idTuriste1, idTuriste2, poruka);
+	printf("Upit koji se izvrsava '%s'\n", sql->query);
+	if (mysql_query(sql->connection, sql->query)) {
+    printf ("Neuspesno izvrsavanje upita komuniciranje\n");
+    exit (EXIT_FAILURE);
+  }
+
+  ispisiKomuniciranje(sql);
+
+  free(poruka);
 }
